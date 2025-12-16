@@ -7,8 +7,8 @@ This repository contains source code for our paper. The code includes data proce
 Clone the repo:
 
 ```bash
-git clone https://github.com/kisnisker/m1p-template.git
-cd m1p-template/code
+git clone https://github.com/kisnisker/robust-loss-landscape-convergence.git
+cd robust-loss-landscape-convergence/code
 ```
 
 Install dependencies:
