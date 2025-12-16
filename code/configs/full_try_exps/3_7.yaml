@@ -1,0 +1,48 @@
+model:
+  class: conv
+  hidden_channels: 4096
+  layers_num: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  kernel_size: 3
+  input_channels: 3
+  output_channels: 8
+  input_sizes: [32, 32]
+  padding: 1
+  variable_param: layers_num
+  classes: 10
+
+logging:
+  save_log_path: 'results/hc_4096'
+  save_params: ['layers_num', 'hidden_channels', 'kernel_size', 'output_channels']
+
+dataset:
+  name: 'CIFAR10'
+  load_path: 'data/'
+  transform_params:
+    mean: [0.5071, 0.4867, 0.4408]
+    std: [0.2675, 0.2565, 0.2761]
+  batch_size: 64
+  size: -1
+
+train_params:
+  optimizer: Adam
+  learning_rate: 3.0e-4
+  num_epochs: [1, 2, 4, 8, 16, 32, 64]
+
+device: 'cuda'
+
+delta_vis_params:
+  mode: random-subspace-proj
+  mode_params:
+    estim_func: abs
+    sigma: 3
+    dim: 2
+  num_samples: 32
+
+num_exps: 8
+
+distributed:
+  cuda_devices: [4, 5, 6, 7]
+
+visualize:
+  smooth_window: 10
+  train_loss_smooth_window: 20

@@ -1,32 +1,13 @@
-# Title
+# Robust Convergence of Loss Landscapes through Distributional Averaging
 
-<!-- Change `kisnikser/m1p-template` to `intsystems/your-repository`-->
-[![License](https://badgen.net/github/license/kisnikser/m1p-template?color=green)](https://github.com/kisnikser/m1p-template/blob/main/LICENSE)
-[![GitHub Contributors](https://img.shields.io/github/contributors/kisnikser/m1p-template)](https://github.com/kisnikser/m1p-template/graphs/contributors)
-[![GitHub Issues](https://img.shields.io/github/issues-closed/kisnikser/m1p-template.svg?color=0088ff)](https://github.com/kisnikser/m1p-template/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr-closed/kisnikser/m1p-template.svg?color=7f29d6)](https://github.com/kisnikser/m1p-template/pulls)
+[![paper](https://img.shields.io/badge/paper-preprint-blue.svg)](https://doi.org/10.1134/S1064562424601987)
+[![slides](https://img.shields.io/badge/slides-presentation-red.svg)](slides/main.pdf)
 
-<table>
-    <tr>
-        <td align="left"> <b> Author </b> </td>
-        <td> Name Surname </td>
-    </tr>
-    <tr>
-        <td align="left"> <b> Consultant </b> </td>
-        <td> Name Surname, PhD/DSc </td>
-    </tr>
-    <tr>
-        <td align="left"> <b> Advisor </b> </td>
-        <td> Name Surname, PhD/DSc </td>
-    </tr>
-</table>
+This is the official implementation of the paper **Robust Convergence of Loss Landscapes through Distributional Averaging** by [Nikita Kiselev](https://kisnikser.github.io/), [Vladislav Meshkov](https://github.com/VseMeshkov) and [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru&oi=sra).
 
-## Assets
+<img alt="overview" width=700 src="paper/losses_difference_monte_carlo.svg">
 
-- [LinkReview](LINKREVIEW.md)
-- [Code](code)
-- [Paper](paper/main.pdf)
-- [Slides](slides/main.pdf)
+> **Abstract:** _Understanding how a neural network’s loss landscape evolves with dataset size is essential for identifying sufficient training data. Prior analyses of this problem have typically been local, focusing on second-order expansions around a single optimum and bounding convergence through Hessian properties. While such studies clarify convergence rates, they provide only a pointwise view of stability. In this paper, we extend the framework to a distributional paradigm. Instead of analyzing convergence at one optimum, we evaluate it in expectation over a parameter distribution. This approach captures how entire neighborhoods of the loss landscape stabilize as additional samples are added. We focus on Gaussian distributions centered at local minima and employ Monte Carlo sampling to estimate convergence in practice. Theoretically, we show that distributional convergence exhibits the same asymptotic rate as the local case, while offering a more robust picture of stability. Empirical studies on image classification tasks confirm these predictions and highlight how architectural choices such as normalization, dropout, and network depth influence convergence. Our results broaden local convergence analyses into a distributional setting, providing stronger guarantees and practical tools for characterizing dataset sufficiency._
 
 ## Abstract
 
@@ -35,6 +16,7 @@ TODO
 ## Citation
 
 If you find our work helpful, please cite us.
+
 ```BibTeX
 @article{citekey,
     title={Title},

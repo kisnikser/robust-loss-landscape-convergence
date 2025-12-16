@@ -1,0 +1,44 @@
+model:
+  class: conv
+  hidden_channels: 64
+  layers_num: 4
+  kernel_size: 3
+  input_channels: 3
+  output_channels: 16
+  input_sizes: [32, 32]
+  variable_param: hidden_channels
+  variable_param_grid: [16, 32, 64, 128]
+  padding: 1
+  classes: 10
+
+logging:
+  models_checkpoint_path: checkpoints/change_layers_num
+  savefig_path: 'results/CIFAR10/conv_channels_sigm8.png'
+
+dataset:
+  name: 'CIFAR10'
+  load_path: 'data/'
+  transform_params:
+    mean: [0.5, 0.5, 0.5]
+    std: [0.5, 0.5, 0.5]
+  batch_size: 64
+  size: 256
+
+train_params:
+  optimizer: Adam
+  learning_rate: 3.0e-4
+  num_epochs: 2
+
+device: 'cuda'
+
+delta_vis_params:
+  mode: random-subspace-proj
+  mode_params:
+    estim_func: abs
+    sigma: 8
+    dim: 2
+  num_samples: 64
+
+visualize:
+  smooth_window: 10
+  train_loss_smooth_window: 20

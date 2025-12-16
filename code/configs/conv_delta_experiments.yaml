@@ -1,0 +1,9 @@
+data:
+  dataset_name: 'MNIST'
+  train_size: 10000
+  train_batch_size: 64
+
+model:
+  input_size: [28, 28]
+  hidden_dims: [1, 16, 64, 64, 32]
+  output_size: 10
