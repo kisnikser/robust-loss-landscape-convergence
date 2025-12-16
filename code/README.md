@@ -23,7 +23,6 @@ pip install -r requirements.txt
 2. **Run a single visualization job.** Execute the trainer/visualizer directly from the `code` directory by pointing Hydra to the config you selected:
 
    ```bash
-   cd code
    python models_delta_visualize.py --config-path configs/CIFAR10 --config-name conv_channels_sigm8
    ```
 
